@@ -74,7 +74,7 @@ Currently it houses:
 
 ### Combo Base and Screen 
 
-- **Base_AND_Screen.f3d**, **Base_AND_Screen.step**, **Base_AND_Screen.stl**: Start here as this is the file which combines both the base and screen into a single print. [Download Base_and_Screen Files](./Files/Base_AND_Screen.stl). ![Base_AND_Screen](./images/ControlCenterBox-FrontRightCorner-Empty.jpg)
+- **Base_AND_Screen.f3d**, **Base_AND_Screen.step**, **Base_AND_Screen.stl**: Start here as this is the file which combines both the base and screen into a single print. [Download Base_and_Screen Files](./Files/Base_AND_Screen.stl). ![Base_AND_Screen](./Images/ControlCenterBox-FrontRightCorner-Empty.jpg)
 
 
 ### Base and Lid
