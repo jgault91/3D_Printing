@@ -1,9 +1,11 @@
-# Control Center Box - README
+# Control Center Box
 
 ## Overview
 This repository contains CAD files and images for the **Control Center Box** project. The Control Center Box is a customizable enclosure designed for housing electronics such as OLED displays, Ethernet modules, and LED control systems. It is suitable for 3D printing and provides modular inserts for various configurations.
 
-The rear insert included is for a keystone where you can use anything from a CAT5/6 Ethernet insert, Barrel Jack (for DC power), HDMI etc. 
+The rear insert included is for a keystone where you can use anything from a CAT5/6 Ethernet insert, Barrel Jack (for DC power), HDMI etc.
+
+[Download the zip folder for all the files listed below.](./files/ControlCenterBox.zip)
 
 Currently it houses: 
 
