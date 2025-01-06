@@ -1,0 +1,262 @@
+substitutions:
+  name: control-center-pod
+  friendly_name: Control Center Pod
+  board: esp32-poe-iso
+  mqtt_broker_ip: 123.456.789.000 # Enter the IP of your MQTT Broker
+  ntp_server: 1.1.1.1 # Or swap for your own. 
+  name_to_greet: John Doe
+
+# Main ESPHome configuration
+esphome:
+  name: ${name}
+  name_add_mac_suffix: false  # Keeps the name consistent for easier integrations
+  friendly_name: ${friendly_name}
+  on_boot:
+    then:
+      - light.turn_on:  # Turn on the LED strip with a rainbow effect during boot
+          id: led_strip
+          effect: rainbow
+      - delay: 10s  # Display the effect for 10 seconds
+      - light.turn_off: led_strip  # Turn off the LED strip to save power
+
+# Enable integration with Home Assistant
+api:
+  encryption:
+    key: !secret control_center_pod_api_key
+
+# Enable MQTT client for alternative communication
+mqtt:
+  broker: ${mqtt_broker_ip}
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  log_topic: null  # Suppress logging to MQTT topics for cleaner logs
+
+# ESP32 board-specific configurations
+esp32:
+  board: ${board}
+  framework:
+    type: arduino
+
+# Ethernet configuration for wired network
+ethernet:
+  type: LAN8720
+  mdc_pin: GPIO23
+  mdio_pin: GPIO18
+  clk_mode: GPIO17_OUT
+  phy_addr: 0
+  power_pin: GPIO12  # Enables Ethernet power
+
+# Global variables for state management
+globals:
+  - id: show_greeting  # Determines if the greeting message should be shown
+    type: bool
+    initial_value: "true"
+
+  - id: iaq_short  # Stores a short representation of Indoor Air Quality (IAQ)
+    type: std::string
+    initial_value: '"null"'  # Default value
+
+# Logger for debugging and monitoring
+logger:
+  level: DEBUG
+
+# Over-the-Air update settings
+ota:
+  - platform: esphome
+    password: !secret control_center_pod_ota_password
+
+# I2C bus configuration for sensors and peripherals
+i2c:
+  sda: 13  # Serial Data Line (SDA) pin
+  scl: 16  # Serial Clock Line (SCL) pin
+  scan: true  # Automatically detect connected devices
+
+# Web server for direct access to the device's interface
+web_server:
+  port: 80  # HTTP port for the web server
+  auth:
+    username: !secret web_server_user
+    password: !secret web_server_password
+
+# Synchronize time with an SNTP server
+time:
+  - platform: sntp
+    id: sntp_time
+    servers: ${ntp_server}
+
+# Sensor configurations
+sensor:
+  # BME680 environmental sensor
+  - platform: bme680
+    address: 0x77  # I2C address of the sensor
+    temperature:
+      name: ${name} BME680 Temperature
+      id: bme680_temp
+      accuracy_decimals: 0
+      filters:
+        - lambda: return x * (9.0/5.0) + 32.0;  # Convert Celsius to Fahrenheit
+      unit_of_measurement: "°F"
+      oversampling: 16x
+    pressure:
+      name: ${name} BME680 Pressure
+      id: bme680_pressure
+      filters:
+        - multiply: 0.02952998330101  # Convert Pascals to mmHg
+      unit_of_measurement: "mmHg"
+    humidity:
+      name: ${name} BME680 Humidity
+      id: bme680_hum
+    gas_resistance:
+      id: gas_resistance
+      name: "BME680 Gas Resistance"
+    update_interval: 5s
+
+  # Template sensor for Indoor Air Quality (IAQ) calculation
+  - platform: template
+    name: "BME680 Indoor Air Quality"
+    id: iaq
+    icon: "mdi:gauge"
+    lambda: |-
+      return log(id(gas_resistance).state) + 0.04 * id(bme680_hum).state;  # IAQ formula
+    state_class: "measurement"
+
+# LED strip configuration
+light:
+  - platform: neopixelbus
+    name: "RGB LED Strip"
+    id: led_strip
+    type: grb
+    pin: 2  # GPIO pin for LED strip
+    method:
+      type: esp32_rmt
+      channel: 0
+    num_leds: 15  # Number of LEDs in the strip
+    variant: WS2813
+    default_transition_length: 1s
+    effects:  # Predefined light effects
+      - addressable_random_twinkle:
+          progress_interval: 250ms
+      - addressable_fireworks:
+      - addressable_flicker:
+      - addressable_rainbow:
+      - addressable_color_wipe:
+      - addressable_scan:
+          name: Scan Effect With Custom Values
+          move_interval: 100ms
+          scan_width: 6
+
+  # Single LED configuration
+  - platform: neopixelbus
+    name: "Single LED"
+    id: single_led
+    type: grb
+    pin: 14  # GPIO pin for the single LED
+    method:
+      type: esp32_rmt
+      channel: 1  # Different channel from the strip
+    num_leds: 1
+    variant: WS2813
+    default_transition_length: 1s
+    effects:  # Same effects as the LED strip
+      - addressable_random_twinkle:
+          progress_interval: 250ms
+      - addressable_fireworks:
+      - addressable_flicker:
+      - addressable_rainbow:
+      - addressable_color_wipe:
+      - addressable_scan:
+          name: Scan Effect With Custom Values
+          move_interval: 100ms
+          scan_width: 6
+
+# Heartbeat effect using an interval
+interval:
+  - interval: 5s
+    then:
+      - lambda: |-
+          if (id(show_greeting)) {
+            id(show_greeting) = false;  // Show greeting only once
+          }
+
+      - light.addressable_set:
+          id: single_led
+          color_brightness: 100%
+          red: 0%
+          green: 100%
+          blue: 0%
+      - delay: 50ms
+      - light.turn_off:
+          id: single_led
+
+# OLED display configuration for status and data
+font:
+  - file: "gfonts://Roboto"
+    id: roboto
+
+  - file: "fonts/arial.ttf"
+    id: arial_sml
+    size: 10
+
+  - file: "fonts/arial.ttf"
+    id: arial_med
+    size: 14
+
+  - file: "fonts/arial.ttf"
+    id: arial_lrg
+    size: 18
+
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    address: 0x3C
+    lambda: |-
+      if (id(show_greeting)) {
+        // Initial greeting message
+        it.printf(64, 32, id(arial_lrg), TextAlign::BASELINE_CENTER, "Hi ${name_to_greet}!");
+      } else {
+        // Main display layout
+        it.printf(64, 0, id(arial_lrg), TextAlign::TOP_CENTER, "Control Center");
+        it.printf(64, 16, id(arial_med), TextAlign::TOP_CENTER, "Air Quality: %s", id(iaq_short).c_str());
+
+        if (id(bme680_temp).has_state()) {
+          it.printf(64, 32, id(arial_med), TextAlign::TOP_CENTER, "Temp: %.1f°F", id(bme680_temp).state);
+        } else {
+          it.printf(64, 32, id(arial_med), TextAlign::TOP_CENTER, "Temp: --");
+        }
+
+        // Time display
+        it.strftime(64, 64, id(roboto), TextAlign::BASELINE_CENTER, "%I:%M %p", id(sntp_time).now());
+      }
+
+# Text sensor for IAQ classification
+text_sensor:
+  - platform: template
+    name: "BME680 IAQ Classification"
+    id: iaq_classification
+    icon: "mdi:checkbox-marked-circle-outline"
+    lambda: |-
+      if (int(id(iaq).state) <= 50) {
+        id(iaq_short) = std::string("Perfect");
+        return {"Excellent"};
+      } else if (int(id(iaq).state) <= 100) {
+        id(iaq_short) = std::string("Good");
+        return {"Good"};
+      } else if (int(id(iaq).state) <= 150) {
+        id(iaq_short) = std::string("LtPol");
+        return {"Lightly polluted"};
+      } else if (int(id(iaq).state) <= 200) {
+        id(iaq_short) = std::string("ModPol");
+        return {"Moderately polluted"};
+      } else if (int(id(iaq).state) <= 250) {
+        id(iaq_short) = std::string("HvyPol");
+        return {"Heavily polluted"};
+      } else if (int(id(iaq).state) <= 350) {
+        id(iaq_short) = std::string("SvrPol");
+        return {"Severely polluted"};
+      } else if (int(id(iaq).state) <= 500) {
+        id(iaq_short) = std::string("ExtPol");
+        return {"Extremely polluted"};
+      } else {
+        id(iaq_short) = std::string("unk");
+        return {"unknown"};
+      }
