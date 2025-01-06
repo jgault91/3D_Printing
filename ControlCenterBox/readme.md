@@ -1,11 +1,18 @@
 # Control Center Box
 
 ## Overview
+
+Following some motivation and a recent [BPS Space video](https://youtu.be/4jgTCayWlwc?si=eSv1VP0tFDjUAst9&t=457) inducing a little additional motivation, I've now "FINISHED THIS PROJECT!!!"...right?
+
+Anyways....
+
 This repository contains CAD files and images for the **Control Center Box** project. The Control Center Box is a customizable enclosure designed for housing electronics such as OLED displays, Ethernet modules, and LED control systems. It is suitable for 3D printing and provides modular inserts for various configurations.
 
 The rear insert included is for a keystone where you can use anything from a CAT5/6 Ethernet insert, Barrel Jack (for DC power), HDMI etc.
 
 [Download the zip folder for all the files listed below.](./files/ControlCenterBox.zip)
+
+It currently talks to Home Assistant over MQTT (and ESPHome) and I have included the [ControlCenter.yml](./ControlCenter.yaml) file and an example [secrets.yaml](./secrets.yaml) file with some placeholder variables.
 
 Currently it houses: 
 
