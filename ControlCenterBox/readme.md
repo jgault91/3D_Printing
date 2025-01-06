@@ -16,9 +16,9 @@ Currently it houses:
 
 ## Completed Build Pictures
 
-![Complete Control Center Box - Front Right](./Images/CompletedBuild_FrontLeft.jpg)
-![Complete Control Center Box - Front](./Images/CompletedBuild_FrontProfile.jpg)
-![Complete Control Center Box - Rear Right](./Images/CompletedBuild_RearRight.jpg)
+![Complete Control Center Box - Front Right](./images/CompletedBuild_FrontLeft.jpg)
+![Complete Control Center Box - Front](./images/CompletedBuild_FrontProfile.jpg)
+![Complete Control Center Box - Rear Right](./images/CompletedBuild_RearRight.jpg)
 
 ## Project Structure
 ```
@@ -74,52 +74,52 @@ Currently it houses:
 
 ### Combo Base and Screen 
 
-- **Base_AND_Screen.f3d**, **Base_AND_Screen.step**, **Base_AND_Screen.stl**: Start here as this is the file which combines both the base and screen into a single print. [Download Base_and_Screen Files](./Files/Base_AND_Screen.stl). ![Base_AND_Screen](./Images/ControlCenterBox-FrontRightCorner-Empty.jpg)
+- **Base_AND_Screen.f3d**, **Base_AND_Screen.step**, **Base_AND_Screen.stl**: Start here as this is the file which combines both the base and screen into a single print. [Download Base_and_Screen Files](./files/Base_AND_Screen.stl). ![Base_AND_Screen](./images/ControlCenterBox-FrontRightCorner-Empty.jpg)
 
 
 ### Base and Lid
-- **BaseBox.f3d**, **BaseBox.step**, **BaseBox.stl**: Main enclosure base for holding components. [Download BaseBox Files](./Files/BaseBox.stl)
-- **BaseLid.f3d**, **BaseLid.step**, **BaseLid.stl**: Lid that secures onto the base for easy access. [Download BaseLid Files](./Files/BaseLid.stl)
+- **BaseBox.f3d**, **BaseBox.step**, **BaseBox.stl**: Main enclosure base for holding components. [Download BaseBox Files](./files/BaseBox.stl)
+- **BaseLid.f3d**, **BaseLid.step**, **BaseLid.stl**: Lid that secures onto the base for easy access. [Download BaseLid Files](./files/BaseLid.stl)
 
 #### Images
-- **Base Lid**: Highlights the assembled base and lid from a front-right perspective.  ![ControlCenterBox-BaseLid-FrontRightCorner](./Images/ControlCenterBox-BaseLid-FrontRightCorner.jpg)
-- **Base Lid Underside**: Underside view of the base and lid assembly.  ![ControlCenterBox-BaseLid-RightRearUnderside](./Images/ControlCenterBox-BaseLid-RightRearUnderside.jpg)
+- **Base Lid**: Highlights the assembled base and lid from a front-right perspective.  ![ControlCenterBox-BaseLid-FrontRightCorner](./images/ControlCenterBox-BaseLid-FrontRightCorner.jpg)
+- **Base Lid Underside**: Underside view of the base and lid assembly.  ![ControlCenterBox-BaseLid-RightRearUnderside](./images/ControlCenterBox-BaseLid-RightRearUnderside.jpg)
 
 ### Shell
-- **Base_AND_Screen.f3d**, **Base_AND_Screen.step**, **Base_AND_Screen.stl**: A modular shell designed to house screens or other inserts. [Download Shell Files](./Files/Base_AND_Screen.stl)
+- **Base_AND_Screen.f3d**, **Base_AND_Screen.step**, **Base_AND_Screen.stl**: A modular shell designed to house screens or other inserts. [Download Shell Files](./files/Base_AND_Screen.stl)
 
 #### Images
-- **Base Shell**: Displays the base with the screen shell attached.  ![ControlCenterBox-BaseShell](./Images/ControlCenterBox-BaseShell.jpg)
-- **Screen Shell**: Standalone view of the screen shell.  ![ControlCenterBox-ScreenShell](./Images/ControlCenterBox-ScreenShell.jpg)
+- **Base Shell**: Displays the base with the screen shell attached.  ![ControlCenterBox-BaseShell](./images/ControlCenterBox-BaseShell.jpg)
+- **Screen Shell**: Standalone view of the screen shell.  ![ControlCenterBox-ScreenShell](./images/ControlCenterBox-ScreenShell.jpg)
 
 ### Inserts
 1. **Center Screen LED Insert**
-   - **Center Screen LED Insert.f3d**, **Center Screen LED Insert.step**, **Center Screen LED Insert.stl**: Insert designed for a central screen LED. [Download Center LED Insert Files](./Files/Center Screen LED Insert.stl)
+   - **Center Screen LED Insert.f3d**, **Center Screen LED Insert.step**, **Center Screen LED Insert.stl**: Insert designed for a central screen LED. [Download Center LED Insert Files](./files/Center Screen LED Insert.stl)
    - **Images**:
-     - **LED Strip Front Profile.jpg**: Front view of the OLED insert.  ![View Image](./Images/Seeed-WLEDStripInsert-FrontProfile.jpg)
-     - **LED Strip Rear Profile.jpg**: Side and rear view of the OLED insert.  ![View Image](./Images/Seeed-WLEDStripInsert-SideRearProfile.jpg)
+     - **LED Strip Front Profile.jpg**: Front view of the OLED insert.  ![View Image](./images/Seeed-WLEDStripInsert-FrontProfile.jpg)
+     - **LED Strip Rear Profile.jpg**: Side and rear view of the OLED insert.  ![View Image](./images/Seeed-WLEDStripInsert-SideRearProfile.jpg)
 
 2. **Left Screen - DFRobot OLED (128x64) and Buttons**
-   - **Left Screen - OLED.f3d**, **Left Screen - OLED.step**, **Left Screen - OLED.stl**: Insert designed for OLED displays. [Download OLED Screen & Buttons Insert Files](./Files/Left_Screen_OLED_and_Buttons.stl) ![Left Screen OLED and Buttons - Front Profile](./Images/DFRobot-OLEDInsert-FrontProfile.jpg) ![Left Screen OLED and Buttons - Side Rear Profile](./Images/DFRobot-OLEDInsert-SideRearProfile.jpg)
+   - **Left Screen - OLED.f3d**, **Left Screen - OLED.step**, **Left Screen - OLED.stl**: Insert designed for OLED displays. [Download OLED Screen & Buttons Insert Files](./files/Left_Screen_OLED_and_Buttons.stl) ![Left Screen OLED and Buttons - Front Profile](./images/DFRobot-OLEDInsert-FrontProfile.jpg) ![Left Screen OLED and Buttons - Side Rear Profile](./images/DFRobot-OLEDInsert-SideRearProfile.jpg)
 
 3. **Rear Extension - Single Keystone**
-   - **Rear_Extension_Insert_Single_Keystone.f3d**, **Rear_Extension_Insert_Single_Keystone.step**, **Rear_Extension_Insert_Single_Keystone.stl**: Insert designed for a single Keystone insert. [Download Rear Insert - Single Keystone Files](./Files/Rear_Extension_Single_Keystone.stl) ![Rear Extension Insert - Single Keystone](./Images/RearInsert-SingleKeystone-Face.jpg) ![Rear Extension Insert - Single Keystone- Rear](./Images/RearInsert-SingleKeystone-Rear.jpg)
+   - **Rear_Extension_Insert_Single_Keystone.f3d**, **Rear_Extension_Insert_Single_Keystone.step**, **Rear_Extension_Insert_Single_Keystone.stl**: Insert designed for a single Keystone insert. [Download Rear Insert - Single Keystone Files](./files/Rear_Extension_Single_Keystone.stl) ![Rear Extension Insert - Single Keystone](./images/RearInsert-SingleKeystone-Face.jpg) ![Rear Extension Insert - Single Keystone- Rear](./images/RearInsert-SingleKeystone-Rear.jpg)
 
 4. **Right Screen - WLED and Buttons**
-   - **Right Screen - WLED and Buttons.f3d**, **Right Screen - WLED and Buttons.step**, **Right Screen - WLED and Buttons.stl**: Insert designed for WLED modules and buttons. [Download Single WLED & Buttons Insert Files](./Files/Right_Screen_WLED_and_Buttons.stl) ![Right Screen -Single WLED and Buttons - Front Profile](./Images/Seeed-WLEDSingleInsertWithButtons-FrontProfile.jpg) ![Right Screen - Single WLED and Buttons - Side Rear](./Images/Seeed-WLEDSingleInsertWithButtons-SideRearProfile.jpg) 
+   - **Right Screen - WLED and Buttons.f3d**, **Right Screen - WLED and Buttons.step**, **Right Screen - WLED and Buttons.stl**: Insert designed for WLED modules and buttons. [Download Single WLED & Buttons Insert Files](./files/Right_Screen_WLED_and_Buttons.stl) ![Right Screen -Single WLED and Buttons - Front Profile](./images/Seeed-WLEDSingleInsertWithButtons-FrontProfile.jpg) ![Right Screen - Single WLED and Buttons - Side Rear](./images/Seeed-WLEDSingleInsertWithButtons-SideRearProfile.jpg) 
 
 ### Hero Images
-- **Control Center Box**: Fully assembled Control Center Box in its default configuration.  ![Control Center Box - Hero](./Images/ControlCenterBox-Hero.jpg)
-- **Control Center Box - With Blanks**: Fully assembled box with blank inserts for customization.  ![Control center box with blanks](./Images/ControlCenterBox-Hero-WithBlanks.jpg)
-- **Hero-Inserts.jpg**: Showcases all available inserts together.  ![Hero inserts](./Images/Hero-Inserts.jpg)
+- **Control Center Box**: Fully assembled Control Center Box in its default configuration.  ![Control Center Box - Hero](./images/ControlCenterBox-Hero.jpg)
+- **Control Center Box - With Blanks**: Fully assembled box with blank inserts for customization.  ![Control center box with blanks](./images/ControlCenterBox-Hero-WithBlanks.jpg)
+- **Hero-Inserts.jpg**: Showcases all available inserts together.  ![Hero inserts](./images/Hero-Inserts.jpg)
 
 ### Additional Views
-- **ControlCenterBox-FrontProfile-Empty.jpg**: Front profile of the box without any inserts.  ![Control Center box front profile - Empty](./Images/ControlCenterBox-FrontProfile-Empty.jpg)
-- **ControlCenterBox-FrontRightCorner-Empty.jpg**: Front-right corner view of the empty box.  ![Control Center box front right corner profile - Empty](./Images/ControlCenterBox-FrontRightCorner-Empty.jpg)
-- **ControlCenterBox-FrontRightCorner-Full.jpg**: Front-right corner view of the box with inserts installed.  ![Control Center box front profile - Populated](./Images/ControlCenterBox-FrontRightCorner-Populated.jpg)
-- **ControlCenterBox-RearProfile.jpg**: Rear profile of the box.  ![View Image](./Images/ControlCenterBox-RearProfile.jpg)
-- **ControlCenterBox-RearRightCorner.jpg**: Rear-right corner view of the box.  ![View Image](./Images/ControlCenterBox-RearRightCorner.jpg)
-- **ControlCenterBox-RearRightCorner-WithEthernetInsert.jpg**: Rear-right corner view with an Ethernet insert installed.  ![View Image](./Images/ControlCenterBox-RearRightCorner-WithEthernetInsert.jpg)
+- **ControlCenterBox-FrontProfile-Empty.jpg**: Front profile of the box without any inserts.  ![Control Center box front profile - Empty](./images/ControlCenterBox-FrontProfile-Empty.jpg)
+- **ControlCenterBox-FrontRightCorner-Empty.jpg**: Front-right corner view of the empty box.  ![Control Center box front right corner profile - Empty](./images/ControlCenterBox-FrontRightCorner-Empty.jpg)
+- **ControlCenterBox-FrontRightCorner-Full.jpg**: Front-right corner view of the box with inserts installed.  ![Control Center box front profile - Populated](./images/ControlCenterBox-FrontRightCorner-Populated.jpg)
+- **ControlCenterBox-RearProfile.jpg**: Rear profile of the box.  ![View Image](./images/ControlCenterBox-RearProfile.jpg)
+- **ControlCenterBox-RearRightCorner.jpg**: Rear-right corner view of the box.  ![View Image](./images/ControlCenterBox-RearRightCorner.jpg)
+- **ControlCenterBox-RearRightCorner-WithEthernetInsert.jpg**: Rear-right corner view with an Ethernet insert installed.  ![View Image](./images/ControlCenterBox-RearRightCorner-WithEthernetInsert.jpg)
 
 ## Printing Instructions
 1. **Recommended Settings**:
