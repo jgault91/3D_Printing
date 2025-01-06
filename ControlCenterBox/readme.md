@@ -2,7 +2,7 @@
 
 ## Overview
 
-Following some motivation and a recent [BPS Space video](https://youtu.be/4jgTCayWlwc?si=eSv1VP0tFDjUAst9&t=457) inducing a little additional motivation, I've now "FINISHED THIS PROJECT!!!"...right?
+Following up some inspiration from a recent [BPS Space video](https://youtu.be/4jgTCayWlwc?si=eSv1VP0tFDjUAst9&t=457) which induced some additional motivation....including "Learning CAD"...I've now "FINISHED THIS PROJECT!!!"...right?
 
 Anyways....
 
