@@ -205,10 +205,15 @@ font:
     id: arial_lrg
     size: 18
 
+# Update the platform depending on which model screen you have
 display:
-  - platform: ssd1306_i2c
-    model: "SSD1306 128x64"
-    address: 0x3C
+  #- platform: ssd1306_i2c # DFRobot 128x64 screen
+    #model: "SSD1306 128x64"
+    #address: 0x3C
+  - platform: ssd1327_i2c # Adafruit 128x128 screen
+    model: "SSD1327 128x128"
+    address: 0x3D
+    # rotation: 180°  # Not necessary, but the headder pins wired in stick out too far so might mount upside down. 
     lambda: |-
       if (id(show_greeting)) {
         // Initial greeting message
