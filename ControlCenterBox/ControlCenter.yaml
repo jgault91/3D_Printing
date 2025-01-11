@@ -88,7 +88,8 @@ time:
 sensor:
   # BME680 environmental sensor
   - platform: bme680
-    address: 0x77  # I2C address of the sensor
+    # address: 0x77  # I2C address of the Parallax sensor
+    address: 0x76 # I2C address of the Seeed Studio sensor
     temperature:
       name: ${name} BME680 Temperature
       id: bme680_temp
