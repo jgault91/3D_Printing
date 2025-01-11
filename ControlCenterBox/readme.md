@@ -106,9 +106,15 @@ And also has compatible faceplates for a DFRobot [Monochrome 0.96" 128x64 I2C/SP
 
 ### Base and Lid
 - **BaseBox.f3d**, **BaseBox.step**, **BaseBox.stl**: Main enclosure base for holding components. [Download BaseBox Files](./files/BaseBox.stl)
-- **BaseLid.f3d**, **BaseLid.step**, **BaseLid.stl**: Lid that secures onto the base for easy access. [Download BaseLid Files](./files/BaseLid.stl)
+- **BaseLid_WithSeeedBME680.f3d**, **BaseLid_WithSeeedBME680.step**, **BaseLid_WithSeeedBME680.stl**: Lid that includes vent holes and a mounting box for a Seeed Studio BME680. [Download BaseLid Files](./files/BaseLid_WithSeeedBME680.stl)
+- **BaseLid.f3d**, **BaseLid.step**, **BaseLid.stl**: Lid that secures onto the base for easy access. No venting [Download BaseLid Files](./files/BaseLid.stl)
 
 #### Images
+- **Base Lid with Seeed BME680 and Vents**: Highlights the assembled base and lid, venting and mount for the BME sensor.  ![ControlCenterBox Vented lid with BME Mount - Top](./images/VentedLidTopRight.jpg) ![ControlCenterBox Vented lid with BME Mount - Underside](./images/VentedLidUnderside-Full.jpg) ![ControlCenterBox Vented lid with BME Mount - Underside Lid Removed Front](./images/VentedLidUnderside-SeeedBME680Mount-Front-LidRemoved.jpg) ![ControlCenterBox Vented lid with BME Mount - Underside Lid Removed Front](./images/VentedLidUnderside-SeeedBME680Mount-Top-LidRemoved.jpg)
+![ControlCenterBox Vented lid with BME Mount Lid](./images/SeeedBME680Lid-Underside.jpg)
+![ControlCenterBox Vented lid with BME Mount Lid - Animation](./images/BMELidAnimation.mkv)
+
+
 - **Base Lid**: Highlights the assembled base and lid from a front-right perspective.  ![ControlCenterBox-BaseLid-FrontRightCorner](./images/ControlCenterBox-BaseLid-FrontRightCorner.jpg)
 - **Base Lid Underside**: Underside view of the base and lid assembly.  ![ControlCenterBox-BaseLid-RightRearUnderside](./images/ControlCenterBox-BaseLid-RightRearUnderside.jpg)
 
