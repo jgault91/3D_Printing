@@ -20,7 +20,7 @@ Currently it houses:
 2. Adafruit [Grayscale 1.5" 128x128 OLED Graphic Display](https://www.adafruit.com/product/4741)
 3. Seeed Studio [Grove - RGB LED Stick (15-WS2813 Mini)](https://www.seeedstudio.com/Grove-RGB-LED-Stick-15-WS2813-Mini-p-4270.html)
 4. Seeed Studio [Grove - RGB LED (WS2813 Mini)](https://www.seeedstudio.com/Grove-RGB-LED-WS2813-Mini-p-4269.html)
-5. Parallax [BME680 Environmental Sensor](https://www.parallax.com/product/bme680-environmental-sensor/)
+5. Seeed Studio [BME680 Environmental Sensor](https://www.seeedstudio.com/Grove-Temperature-Humidity-Pressure-and-Gas-Sensor-for-Arduino-BME680.html) or Parallax [BME680 Environmental Sensor](https://www.parallax.com/product/bme680-environmental-sensor/)
 6. Miscelaneous Normally Open (N.O) buttons ^but theses are not currently implemented yet
 
 And also has compatible faceplates for a DFRobot [Monochrome 0.96" 128x64 I2C/SPI OLED Display](Https://www.dfrobot.com/product-2017.html)
